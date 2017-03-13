@@ -33,7 +33,7 @@ namespace Minduca.Application.Payments
 
             _paymentRepository.Insert(payment);
 
-            _events.Raise(new OrderPayedEvent(payment, order.Items));
+            _events.Raise(new OrderPaidEvent(payment, order.Items));
         }
     }
 }

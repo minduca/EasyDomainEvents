@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace Minduca.Application.Orders.EventHandlers
 {
-    public class PlaceOrderWhenPayedEventHandler : IHandles<OrderPayedEvent>
+    public class PlaceOrderWhenPaidEventHandler : IHandles<OrderPaidEvent>
     {
         private readonly IOrderPlacementService _orderPlacement;
 
-        public PlaceOrderWhenPayedEventHandler(IOrderPlacementService orderPlacement)
+        public PlaceOrderWhenPaidEventHandler(IOrderPlacementService orderPlacement)
         {
             _orderPlacement = orderPlacement;
         }
 
         public bool Deferred { get { return false; } }
 
-        public void Handle(OrderPayedEvent domainEvent)
+        public void Handle(OrderPaidEvent domainEvent)
         {
-            System.Console.WriteLine("[Event] - PlaceOrderWhenPayedEventHandler.Handle(domainEvent)");
+            System.Console.WriteLine("[Event] - PlaceOrderWhenPaidEventHandler.Handle(domainEvent)");
             _orderPlacement.PlaceOrder(domainEvent.Payment.OrderId);
         }
     }

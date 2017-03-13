@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Minduca.Domain.Payments.Events
 {
-    public class OrderPayedEvent : IDomainEvent
+    public class OrderPaidEvent : IDomainEvent
     {
-        public OrderPayedEvent(Payment payment, IEnumerable<OrderItem> orderItems)
+        public OrderPaidEvent(Payment payment, IEnumerable<OrderItem> orderItems)
         {
             Payment = payment;
             OrderItems = new List<OrderItem>(orderItems);

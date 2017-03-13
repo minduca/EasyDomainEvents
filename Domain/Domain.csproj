@@ -51,7 +51,7 @@
     <Compile Include="Inventory\IInventoryService.cs" />
     <Compile Include="Orders\EOrderStatus.cs" />
     <Compile Include="Orders\OrderItem.cs" />
-    <Compile Include="Payments\Events\OrderPayedEvent.cs" />
+    <Compile Include="Payments\Events\OrderPaidEvent.cs" />
     <Compile Include="Orders\Events\OrderShippedEvent.cs" />
     <Compile Include="Orders\IOrderPlacementService.cs" />
     <Compile Include="Orders\Order.cs" />

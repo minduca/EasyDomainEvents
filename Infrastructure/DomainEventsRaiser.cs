@@ -11,11 +11,11 @@ namespace Minduca.Infrastructure
         /// <summary>
         /// Locator of event handlers
         /// </summary>
-        private readonly IServiceProvider _resolver;
+        private readonly IServiceProvider _locator;
 
-        internal DomainEventsRaiser(IServiceProvider resolver)
+        internal DomainEventsRaiser(IServiceProvider locator)
         {
-            _resolver = resolver;
+            _locator = locator;
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace Minduca.Infrastructure
         public void Raise<T>(T domainEvent) where T : IDomainEvent
         {
             //Get all the handlers that handle events of type T
-            IHandles<T>[] allHandlers = (IHandles<T>[])_resolver.GetService(typeof(IHandles<T>[]));
+            IHandles<T>[] allHandlers = (IHandles<T>[])_locator.GetService(typeof(IHandles<T>[]));
 
             if (allHandlers != null && allHandlers.Length > 0)
                 foreach (var handler in allHandlers)

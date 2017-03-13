@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace Minduca.Application.Inventory.EventHandlers
 {
-    public class SubtractInventaryWhenOrderPayedEventHandler : IHandles<OrderPayedEvent>
+    public class SubtractInventaryWhenOrderPaidEventHandler : IHandles<OrderPaidEvent>
     {
         private readonly IInventoryService _inventory;
 
-        public SubtractInventaryWhenOrderPayedEventHandler(IInventoryService inventory)
+        public SubtractInventaryWhenOrderPaidEventHandler(IInventoryService inventory)
         {
             _inventory = inventory;
         }
 
         public bool Deferred { get { return false; } }
 
-        public void Handle(OrderPayedEvent domainEvent)
+        public void Handle(OrderPaidEvent domainEvent)
         {
-            System.Console.WriteLine("[Event] - SubtractInventaryWhenOrderPayedEventHandler.Handle(domainEvent)");
+            System.Console.WriteLine("[Event] - SubtractInventaryWhenOrderPaidEventHandler.Handle(domainEvent)");
             foreach (var item in domainEvent.OrderItems)
                 _inventory.SubtractAvailability(item.InventoryItemId, item.Quantity);
         }

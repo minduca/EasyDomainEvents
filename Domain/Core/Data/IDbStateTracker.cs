@@ -4,7 +4,7 @@ namespace Minduca.Domain.Core.Data
 {
 
     /// <summary>
-    /// Tracks the database state
+    /// Tracks the database's state
     /// </summary>
     public interface IDbStateTracker : IDisposable
     {

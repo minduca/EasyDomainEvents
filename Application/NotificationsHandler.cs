@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Minduca.BoundedContexts
 {
-    public class NotificationsHandler : IHandles<OrderPayedEvent>, IHandles<OrderShippedEvent> //<- multiple events handled by a single handler
+    public class NotificationsHandler : IHandles<OrderPaidEvent>, IHandles<OrderShippedEvent> //<- multiple events handled by a single handler
     {
         private readonly IUserNotifier _notifier;
 
@@ -21,10 +21,10 @@ namespace Minduca.BoundedContexts
 
         public bool Deferred { get { return true; } } //<- 'true' here indicates that all these events should be invoked only after the transaction is committed
 
-        public void Handle(OrderPayedEvent domainEvent)
+        public void Handle(OrderPaidEvent domainEvent)
         {
             System.Console.WriteLine("[Event] - NotificationsHandler.Handle(domainEvent)");
-            _notifier.Notify("Yay! We received your money. Your order has been placed");
+            _notifier.Notify("Yay! Your payment has been processed.");
         }
 
         public void Handle(OrderShippedEvent domainEvent)

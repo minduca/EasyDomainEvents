@@ -41,10 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inventory\EventHandlers\SubtractInventaryWhenOrderPayedEventHandler.cs" />
+    <Compile Include="Inventory\EventHandlers\SubtractInventaryWhenOrderPaidEventHandler.cs" />
     <Compile Include="Inventory\InventoryService.cs" />
     <Compile Include="NotificationsHandler.cs" />
-    <Compile Include="Orders\EventHandlers\PlaceOrderWhenPayedEventHandler.cs" />
+    <Compile Include="Orders\EventHandlers\PlaceOrderWhenPaidEventHandler.cs" />
     <Compile Include="Orders\OrderPlacementService.cs" />
     <Compile Include="Payments\PaymentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
