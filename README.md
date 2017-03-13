@@ -1,2 +1,2 @@
 # EasyDomainEvents
-A convention-based domain event with support to deferred execution for DDD
+Domain Events With Convention-Based Registration And Deferred Execution Support
